@@ -79,14 +79,14 @@ stages:
           - download: current
             artifact: drop
           - task: AzureWebApp@1
-            displayName: 'Azure App Service Deploy: website mat-tailspin-space-game-web'
+            displayName: 'Azure App Service Deploy: website mat-tailspin-space-game-web (host : Linux. .net Core 2.1'
             inputs:
-              azureSubscription: 'Resource Manager - Tailspin - Space Game (host : Linux. .net Core 2.1)'
+              azureSubscription: 'Resource Manager - Tailspin - Space Game'
               appName: '$(WebAppName)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
           - task: AzureWebApp@1
             displayName: 'Azure App Service Deploy: website matopc-web03 (host : Windows. .net Core 2.1)'
             inputs:
-              azureSubscription: 'Resource Manager - Tailspin - Space Game'
+              azureSubscription: 'Ressource Manager - Mat App Service'
               appName: '$(WebAppName2)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
